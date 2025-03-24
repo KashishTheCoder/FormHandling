@@ -5,6 +5,7 @@ function MyForm(){
     const [password, setPassword] = useState("");
     const [gender, setGender] = useState("");
     const [languages, setLanguages] = useState([]);
+    const [destination, setDestination] = useState("");
 
     function handleChange(event){
         if(event.target.name === "name"){
@@ -25,6 +26,9 @@ function MyForm(){
             else{
                 setLanguages(prev => prev.filter(language => language !== value));
             }
+        }
+        else if(event.target.name === "destination"){
+            setDestination(() => event.target.value);
         }
     }
 
@@ -56,11 +60,20 @@ function MyForm(){
                 <input type="checkbox" value="React" name="languages" onChange={handleChange} />React &nbsp;&nbsp;&nbsp;
                 <input type="checkbox" value="Tailwind" name="languages" onChange={handleChange} />Tailwind &nbsp;&nbsp;&nbsp;
                 <input type="checkbox" value="ECMAScript" name="languages" onChange={handleChange} />ECMAScript
+
+                <label>Favorite Destination:</label>
+                <select name="destination" onChange={handleChange}>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Bangkok">Bangkok</option>
+                </select>
             </form>
             <div>
                 <h3>Name: {name}</h3>
                 <h3>Password: {password}</h3>
                 <h3>Gender: {gender}</h3>
+                <h3>Favorite Destination: {destination}</h3>
                 <h3>Languages: </h3>
                 <ul>
                     {
