@@ -6,23 +6,25 @@ function MyForm(){
     const [gender, setGender] = useState("");
     const [languages, setLanguages] = useState([]);
 
-    function handleNameChange(event){
-        setName(() => event.target.value);
-    }
-    function handlePasswordChange(event){
-        setPassword(() => event.target.value);
-    }
-    function handleGenderChange(event){
-        setGender(() => event.target.value);
-    }
-    function handleLanguageChange(event){
-        const {value, checked} = event.target;
-        
-        if(checked){
-            setLanguages(prev => [...prev, value]);
+    function handleChange(event){
+        if(event.target.name === "name"){
+            setName(() => event.target.value);
         }
-        else{
-            setLanguages(prev => prev.filter(language => language !== value));
+        else if(event.target.name === "password"){
+            setPassword(() => event.target.value);
+        }
+        else if(event.target.name === "gender"){
+            setGender(() => event.target.value);
+        }
+        else if(event.target.name === "languages"){
+            const {value, checked} = event.target;
+            
+            if(checked){
+                setLanguages(prev => [...prev, value]);
+            }
+            else{
+                setLanguages(prev => prev.filter(language => language !== value));
+            }
         }
     }
 
@@ -30,30 +32,30 @@ function MyForm(){
         <>
             <form>
                 <label for="name">Name: </label>
-                <input type="text" value={name} onChange={handleNameChange} />
+                <input type="text" name="name" value={name} onChange={handleChange} />
                 <br />
 
                 <label for="password">Password: </label>
-                <input type="password" value={password} onChange={handlePasswordChange} />
+                <input type="password" name="password" value={password} onChange={handleChange} />
                 <br />
 
                 <label>Gender:</label>
                 <label>Male</label>
-                <input type="radio" name="gender" value="Male" onChange={handleGenderChange} checked={gender === "Male"} />
+                <input type="radio" name="gender" value="Male" onChange={handleChange} checked={gender === "Male"} />
                 <label>Female</label>
-                <input type="radio" name="gender" value="Female" onChange={handleGenderChange} checked={gender === "Female"} />
+                <input type="radio" name="gender" value="Female" onChange={handleChange} checked={gender === "Female"} />
                 <label>Other</label>
-                <input type="radio" name="gender" value="Other" onChange={handleGenderChange} checked={gender === "Other"} />
-                 <br />
+                <input type="radio" name="gender" value="Other" onChange={handleChange} checked={gender === "Other"} />
+                <br />
 
                 <label>Languages:</label>
                 <br />
-                <input type="checkbox" value="HTML" name="languages" onChange={handleLanguageChange} />HTML &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" value="CSS" name="languages" onChange={handleLanguageChange} />CSS &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" value="JavaScript" name="languages" onChange={handleLanguageChange} />JavaScript &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" value="React" name="languages" onChange={handleLanguageChange} />React &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" value="Tailwind" name="languages" onChange={handleLanguageChange} />Tailwind &nbsp;&nbsp;&nbsp;
-                <input type="checkbox" value="ECMAScript" name="languages" onChange={handleLanguageChange} />ECMAScript
+                <input type="checkbox" value="HTML" name="languages" onChange={handleChange} />HTML &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" value="CSS" name="languages" onChange={handleChange} />CSS &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" value="JavaScript" name="languages" onChange={handleChange} />JavaScript &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" value="React" name="languages" onChange={handleChange} />React &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" value="Tailwind" name="languages" onChange={handleChange} />Tailwind &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" value="ECMAScript" name="languages" onChange={handleChange} />ECMAScript
             </form>
             <div>
                 <h3>Name: {name}</h3>
