@@ -64,6 +64,7 @@ function MyForm(){
 
                 <label>Favorite Destination:</label>
                 <select name="destination" onChange={handleChange}>
+                    <option value="">Select an Option</option>
                     <option value="Switzerland">Switzerland</option>
                     <option value="Norway">Norway</option>
                     <option value="Maldives">Maldives</option>
