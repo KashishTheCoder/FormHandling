@@ -45,11 +45,11 @@ function MyForm(){
 
                 <label>Gender:</label>
                 <label>Male</label>
-                <input type="radio" name="gender" value="Male" onChange={handleChange} checked={gender === "Male"} />
+                <input type="radio" name="gender" value="Male" onChange={handleChange} />
                 <label>Female</label>
-                <input type="radio" name="gender" value="Female" onChange={handleChange} checked={gender === "Female"} />
+                <input type="radio" name="gender" value="Female" onChange={handleChange} />
                 <label>Other</label>
-                <input type="radio" name="gender" value="Other" onChange={handleChange} checked={gender === "Other"} />
+                <input type="radio" name="gender" value="Other" onChange={handleChange} />
                 <br />
 
                 <label>Languages:</label>
