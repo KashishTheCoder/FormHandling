@@ -4,12 +4,13 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MyForm from './MyForm'
 import FilterableTable from './FilterableTable'
+import DigiClock from './DigiClock';
+import Stopwatch from './Stopwatch'
 
 function App() {
-
-  return (
+   return (
     <>
-      <FilterableTable />
+      <Stopwatch />
     </>
   )
 }
