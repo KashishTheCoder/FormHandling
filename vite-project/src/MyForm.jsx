@@ -60,6 +60,7 @@ function MyForm(){
                 <input type="checkbox" value="React" name="languages" onChange={handleChange} />React &nbsp;&nbsp;&nbsp;
                 <input type="checkbox" value="Tailwind" name="languages" onChange={handleChange} />Tailwind &nbsp;&nbsp;&nbsp;
                 <input type="checkbox" value="ECMAScript" name="languages" onChange={handleChange} />ECMAScript
+                <br />
 
                 <label>Favorite Destination:</label>
                 <select name="destination" onChange={handleChange}>
